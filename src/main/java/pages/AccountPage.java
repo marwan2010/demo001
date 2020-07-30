@@ -59,7 +59,7 @@ public class AccountPage extends PagesBase {
 	
 	
 	public String get_assert_product_details() {
-		System.out.println("xxxxxxxx"+product_name.getText());
+		
 		return product_name.getText();
 	}
 

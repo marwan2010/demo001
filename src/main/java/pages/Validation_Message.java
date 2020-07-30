@@ -89,7 +89,7 @@ public boolean get_require_message_lname() {
 public boolean get_invalid_message_email() {
 	
 	waitpresenceOfElementLocated(error_email,10);
-	System.out.println("xxxxxxxx"+error_email.getText());
+	
 	return 	error_email.isDisplayed();	
 }
 
@@ -97,7 +97,7 @@ public boolean get_invalid_message_email() {
 public boolean get_require_message_password() {
 	
 	waitpresenceOfElementLocated(error_passwd,10);
-	System.out.println("xxxxxxxx"+error_passwd.getText());
+
 	return 	error_passwd.isDisplayed();	
 }
 
@@ -105,28 +105,28 @@ public boolean get_require_message_password() {
 public boolean get_invalid_message_address1() {
 	
 	waitpresenceOfElementLocated(error_address1,10);
-	System.out.println("xxxxxxxx"+error_address1.getText());
+	
 	return 	error_address1.isDisplayed();	
 }
 
 public boolean get_invalid_message_city() {
 	
 	waitpresenceOfElementLocated(error_city,10);
-	System.out.println("xxxxxxxx"+error_city.getText());
+	
 	return 	error_city.isDisplayed();	
 }
 	
 public boolean get_invalid_message_country() {
 	
 	waitpresenceOfElementLocated(error_country,5);
-	System.out.println("xxxxxxxx"+error_country.getText());
+	
 	return 	error_country.isDisplayed();	
 }
 
 public boolean get_invalid_message_zipcode() {
 	
 	waitpresenceOfElementLocated(error_Zip_Postal,10);
-	System.out.println("xxxxxxxx"+error_Zip_Postal.getText());
+	
 	return 	error_Zip_Postal.isDisplayed();	
 }	
 
@@ -134,21 +134,21 @@ public boolean get_invalid_message_zipcode() {
 public boolean get_require_message_mobile() {
 	
 	waitpresenceOfElementLocated(error_mobile,10);
-	System.out.println("xxxxxxxx"+error_mobile.getText());
+	
 	return 	error_mobile.isDisplayed();	
 }
 
 public boolean get_invalid_message_mobile() {
 	
 	waitpresenceOfElementLocated(invalid_mobile,10);
-	System.out.println("xxxxxxxx"+invalid_mobile.getText());
+	
 	return 	invalid_mobile.isDisplayed();	
 }
 
 public String get_heading_assertion_title() {
 	
 	waitpresenceOfElementLocated(my_account_title,10);
-	System.out.println("xxxxxxxx"+my_account_title.getText());
+
 	return 	my_account_title.getText();	
 }
 
