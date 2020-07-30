@@ -94,7 +94,7 @@ public class Create_new_user_Test extends BaseTest {
 
 	}
 
-	// @Test(priority = 4)
+	@Test(priority = 4)
 	public void Verify_Personal_info_valid_fields() {
 
 		registerObject.enterName(jf.getFirstName());
