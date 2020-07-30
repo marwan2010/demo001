@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="tests.Create_new_user_Test">
+        <methods>
+          <include name="openURL"/>
+          <include name="Verify_authentication_Page"/>
+          <include name="setup"/>
+          <include name="setupDriver"/>
+        </methods>
+      </class> <!-- tests.Create_new_user_Test -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
