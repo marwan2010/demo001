@@ -8,9 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class RegisterPage extends PagesBase{
+public class RegistrationPage extends PagesBase{
 
-	public RegisterPage(WebDriver driver) {
+	public RegistrationPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
@@ -90,12 +90,16 @@ public class RegisterPage extends PagesBase{
 	
 	@FindBy(id="submitAccount")
 	WebElement submitAccount;
-	
+	@FindBy(xpath="/html/body/div/div[1]/header/div[2]/div/div/nav/div[2]/a")
+	  WebElement signout_btn;
 
 	@FindBy(id="//*[@id=\"center_column\"]/div/div[1]/ul/li[1]/a/span")
 	WebElement order_history;
 	
-	
+	public void click_On_signout() {
+		
+		clickButton(signout_btn,30);	     
+	}
 	
 
 	public void enterName(String value){

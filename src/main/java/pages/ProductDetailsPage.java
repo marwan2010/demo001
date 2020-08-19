@@ -4,8 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CartPage extends PagesBase {
-	public CartPage(WebDriver driver) {
+public class ProductDetailsPage extends PagesBase {
+	public ProductDetailsPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
@@ -30,9 +30,6 @@ public class CartPage extends PagesBase {
 
 	@FindBy(xpath = "//*[@id=\"product_2_7_0_353233\"]/td[2]/p")
 	WebElement product_name;
-	
-	@FindBy(xpath = "/html/body/div/div[2]/div/div[3]/div/p[2]/a[1]/span")
-	WebElement checkout_btn;
 
 	public void click_on_Add_To_Cart()
 
@@ -42,7 +39,7 @@ public class CartPage extends PagesBase {
 		clickButton(add_to_cart_btn, 10);
 	}
 
-	public void openShoppingcartPage()
+	public void click_on_view_Cart()
 
 	{
 		js.executeScript("window.scrollBy(0,-700)");
@@ -53,12 +50,6 @@ public class CartPage extends PagesBase {
 	
 	public void click_on_Continue_shopping() {
 		clickButton(cont_shopping, 10);
-
-	}
-	
-	public void click_on_Proceed_checkout_btn() {
-		js.executeScript("window.scrollBy(0,700)");
-		clickButton(checkout_btn, 10);
 
 	}
 

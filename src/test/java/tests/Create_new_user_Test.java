@@ -1,24 +1,27 @@
 package tests;
 
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import org.testng.AssertJUnit;
 import pages.HomePage;
-import pages.RegisterPage;
+import pages.RegistrationPage;
 import pages.Validation_Message;
 import utility.JavaFakerAPI;
 
 public class Create_new_user_Test extends BaseTest {
 	HomePage homeObject;
-	RegisterPage registerObject;
+	RegistrationPage registerObject;
 	Validation_Message validtionObject;
 	JavaFakerAPI jf;
+	String emails=null;
 
-	@BeforeClass
+	@BeforeMethod
 	public void setup() {
 	//	driver.manage().deleteAllCookies();
 		homeObject = new HomePage(driver);
-		registerObject = new RegisterPage(driver);
+		registerObject = new RegistrationPage(driver);
 		validtionObject = new Validation_Message(driver);
 		jf = new JavaFakerAPI();
 
@@ -26,13 +29,14 @@ public class Create_new_user_Test extends BaseTest {
 
 	@Test(priority = 0)
 	public void Verify_authentication_Page() {
-		homeObject.click_On_signIn();
+		homeObject.Open_Rigester_Page();
 		AssertJUnit.assertTrue(registerObject.submitCreate_btn.isDisplayed());
 	}
 
 	@Test(priority = 1)
-	public void Verify_Email_Test() {
-
+	public void invalidEmailTest() {
+		homeObject = new HomePage(driver);
+		homeObject.Open_Rigester_Page();
 		// without entering email
 		registerObject.click_On_SubmitCreate();
 		AssertJUnit.assertTrue(validtionObject.getEmailErrorMessage());
@@ -47,14 +51,21 @@ public class Create_new_user_Test extends BaseTest {
 		registerObject.click_On_SubmitCreate();
 		AssertJUnit.assertTrue(validtionObject.getEmailRegistredMessage());
 
-		// entring Correct email
-		registerObject.enter_email(jf.getEmailID());
-		registerObject.click_On_SubmitCreate();
-		AssertJUnit.assertTrue(validtionObject.get_title_heading());
+		
 
 	}
-
+	
 	@Test(priority = 2)
+	
+	public void Register_as_Correct_Emails()
+	{
+		// entring Correct email
+				registerObject.enter_email(jf.getEmailID());
+				registerObject.click_On_SubmitCreate();
+				AssertJUnit.assertTrue(validtionObject.get_title_heading());
+	}
+
+	@Test(priority = 3)
 	public void Verify_mandatory_personal_info_fields() {
 		// submit without data
 		registerObject.enterName("");
@@ -76,11 +87,11 @@ public class Create_new_user_Test extends BaseTest {
 		AssertJUnit.assertTrue(validtionObject.get_require_message_mobile());
 		AssertJUnit.assertTrue(validtionObject.get_invalid_message_zipcode());
 
-		// submit with correct data
+		
 
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 4)
 	public void Verify_personal_info_invalid_fields() {
 
 		// submit wrong format data
@@ -94,12 +105,13 @@ public class Create_new_user_Test extends BaseTest {
 
 	}
 
-	@Test(priority = 4)
-	public void Verify_Personal_info_valid_fields() {
-
+	@Test(priority = 5)
+	public void Verify_Personal_info_valid_fields( ) {
+		 // Registration with all valid data
+          emails="m4@m.com";
 		registerObject.enterName(jf.getFirstName());
 		registerObject.enter_lastName(jf.getLastName());
-		registerObject.enter_updated_email(jf.getEmailID());
+		registerObject.enter_updated_email(emails);
 		registerObject.enter_password(jf.getPassword());
 		registerObject.enter_address1(jf.getaddress());
 		registerObject.enter_city(jf.getCityName());
@@ -117,6 +129,7 @@ public class Create_new_user_Test extends BaseTest {
 		registerObject.enter_other(jf.getdescription());
 		registerObject.click_On_Rigester_Account_btn();
 		AssertJUnit.assertTrue(validtionObject.get_heading_assertion_title().equalsIgnoreCase("My account"));
+		//registerObject.click_On_signout();
 	}
 
 }

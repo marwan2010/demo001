@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.Create_new_user_Test">
+      <class name="tests.LoginTest">
         <methods>
           <include name="openURL"/>
-          <include name="Verify_authentication_Page"/>
-          <include name="setup"/>
-          <include name="setupDriver"/>
+          <include name="UserCanLogInSuccees"/>
+          <include name="browsersetup"/>
+          <include name="close"/>
         </methods>
-      </class> <!-- tests.Create_new_user_Test -->
+      </class> <!-- tests.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

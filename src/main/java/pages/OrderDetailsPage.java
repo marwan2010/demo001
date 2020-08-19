@@ -4,8 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class OrderPage extends PagesBase {
-	public OrderPage(WebDriver driver) {
+public class OrderDetailsPage extends PagesBase {
+	public OrderDetailsPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
@@ -13,8 +13,7 @@ public class OrderPage extends PagesBase {
 	@FindBy(xpath = "//span[@title=\"Continue shopping\"]")
 	WebElement cont_shopping;
 
-	@FindBy(xpath = "/html/body/div/div[2]/div/div[3]/div/p[2]/a[1]/span")
-	WebElement checkout_btn;
+	
 
 	@FindBy(name = "/html/body/div/div[2]/div/div[3]/div/div/form/p/button/span")
 	WebElement checkout_btn2;
@@ -84,11 +83,7 @@ public class OrderPage extends PagesBase {
 		clickButton(checkout0_btn, 10);
 	}
 
-	public void click_on_Proceed_checkout_btn() {
-		js.executeScript("window.scrollBy(0,700)");
-		clickButton(checkout_btn, 10);
-
-	}
+	
 
 	public void click_on_Continue_shopping() {
 		clickButton(cont_shopping, 10);

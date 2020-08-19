@@ -14,6 +14,8 @@ public class HomePage extends PagesBase{
 	@FindBy(className="login")
 	  WebElement signIn_btn;
 	
+
+	
 	@FindBy(linkText="WOMEN")
 	public WebElement  woman_category;
 	
@@ -27,10 +29,17 @@ public class HomePage extends PagesBase{
 	
 	
 	
-public void click_On_signIn() {
+public void Open_Rigester_Page() {
 		
 		clickButton(signIn_btn,30);	     
 	}
+
+public void Open_Login_Page() {
+	
+	clickButton(signIn_btn,30);	     
+}
+
+
 	
 
 public void click_on_Woman_category()

@@ -4,9 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AccountPage extends PagesBase {
+public class MyAccountPage extends PagesBase {
 
-	public AccountPage(WebDriver driver) {
+	public MyAccountPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
@@ -29,13 +29,13 @@ public class AccountPage extends PagesBase {
 	WebElement product_name;
 	
 	
-	public void click_on_View_myaccount() {
+	public void open_My_Account_Page() {
 
 		clickButton(view_myaccount, 10);
 
 	}
 
-	public void click_On_Account_Order_history_btn() {
+	public void open_Order_history_Page() {
 
 		clickButton(order_history_btn, 10);
 
